@@ -1,0 +1,86 @@
+---
+interface Props {
+	title: string;
+}
+
+const { title } = Astro.props;
+
+import { Aside } from '../components/Aside';
+import NavBar from '../components/NavBar.astro';
+import StreamInfo from '../components/StreamInfo.astro';
+
+
+const streams = [
+	{
+		name: "Auronplay",
+		category: "Charlando",
+		viewers: "22.755",
+		img: "https://static-cdn.jtvnw.net/jtv_user_pictures/bf1d52e3-b46b-4c07-9b4f-a1ab8c4e40f8-profile_image-300x300.png"
+	},
+	{
+		name: "Luzu",
+		category: "Minecraft",
+		viewers: "642",
+		img: "https://static-cdn.jtvnw.net/jtv_user_pictures/2f3b8fd5-b2d2-403b-9aaf-16e69073b584-profile_image-300x300.png"
+	},
+	{
+		name: "Ninja",
+		category: "Fortnite",
+		viewers: "9845",
+		img: "https://phantom-elmundo.unidadeditorial.es/9e302c2e024f70492ed7cf27eaa6e61d/crop/0x0/1349x898/resize/414/f/jpg/assets/multimedia/imagenes/2019/08/12/15656006955566.jpg"
+	},
+	{
+		name: "bysTaXx",
+		category: "Counter-Strike",
+		viewers: "1533",
+		img: "https://static-cdn.jtvnw.net/jtv_user_pictures/5a74ee2b-fdc4-4e18-b571-9118ca5ecbff-profile_image-300x300.png"
+	},
+	
+]
+
+
+const recommendedStreams = [
+	{
+		name: "illojuan_waitings",
+		category: "Charlando",
+		viewers: "262",
+		img: "https://static-cdn.jtvnw.net/jtv_user_pictures/593b5641-c626-4ba4-ba49-11cb33f6c3e8-profile_image-300x300.png"
+	},
+	{
+		name: "VEGETTA777",
+		category: "Counter-Strike",
+		viewers: "2669",
+		img: "https://static-cdn.jtvnw.net/jtv_user_pictures/bbe9b7f7-8c58-4734-adab-52c2c791b9a6-profile_image-300x300.png"
+	},
+	{
+		name: "programmer-live",
+		category: "Desarrollo de Software",
+		viewers: "7",
+		img: "https://m.media-amazon.com/images/I/71QKskEoG+L._AC_UF1000,1000_QL80_.jpg"
+	},
+	
+]
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="description" content="Astro description" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="generator" content={Astro.generator} />
+		<title>{title}</title>
+	</head>
+	<body>
+		<div class="flex flex-col h-full w-full bg-zinc-900">
+			<NavBar/>
+			<div class="grid grid-cols-[minmax(0,max-content)_1fr]">
+				<Aside client:load streams={streams} recommendedStreams={recommendedStreams}/>
+				<slot />
+			</div>
+			
+		</div>
+		
+	</body>
+</html>
