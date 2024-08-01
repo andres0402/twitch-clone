@@ -1,11 +1,71 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import Card from '../components/Card.astro';
+import { Chat } from '../components/Chat';
 ---
 
 <Layout title="Twitch">
-	<main>
-		
+	<main class="grid grid-cols-[minmax(1350px,max-content)_minmax(0,max-content)] grid-rows-[minmax(700px,max-content)_minmax(0,max-content)]">
+		<iframe src="https://player.kick.com/elzeein" class="h-full w-full" frameborder="0" scrolling="no" allowfullscreen="true"></iframe>
+		<Chat client:load/>
+		<div class="flex flex-row gap-2 mx-6 absolute bottom-20">
+			<div class="flex flex-row">
+				<button class="">
+					<img src="https://static-cdn.jtvnw.net/jtv_user_pictures/5a72c3d9-424a-40a6-bf23-73370cd85578-profile_image-300x300.png" class="rounded-full h-[70px] w-[70px] border-[2px] border-zinc-400 hover:border-[4px] transition-all"/>
+				</button>
+				<div class="flex flex-col items-start mx-3 gap-2">
+					<div class="flex flex-row justify-between w-[1200px] items-center">
+						<div class="flex flex-row gap-7">
+							<div class="flex flex-row gap-2 items-center">
+								<a href="" class="font-bold text-white text-xl">midudev</a>
+								<svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-discount-check" width="20" height="20" viewBox="0 0 24 24" stroke-width="1.5" stroke="#a905b6" fill="none" stroke-linecap="round" stroke-linejoin="round">
+									<path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+									<path d="M5 7.2a2.2 2.2 0 0 1 2.2 -2.2h1a2.2 2.2 0 0 0 1.55 -.64l.7 -.7a2.2 2.2 0 0 1 3.12 0l.7 .7c.412 .41 .97 .64 1.55 .64h1a2.2 2.2 0 0 1 2.2 2.2v1c0 .58 .23 1.138 .64 1.55l.7 .7a2.2 2.2 0 0 1 0 3.12l-.7 .7a2.2 2.2 0 0 0 -.64 1.55v1a2.2 2.2 0 0 1 -2.2 2.2h-1a2.2 2.2 0 0 0 -1.55 .64l-.7 .7a2.2 2.2 0 0 1 -3.12 0l-.7 -.7a2.2 2.2 0 0 0 -1.55 -.64h-1a2.2 2.2 0 0 1 -2.2 -2.2v-1a2.2 2.2 0 0 0 -.64 -1.55l-.7 -.7a2.2 2.2 0 0 1 0 -3.12l.7 -.7a2.2 2.2 0 0 0 .64 -1.55v-1" />
+									<path d="M9 12l2 2l4 -4" />
+								  </svg>							</div>
+							<a href="" class="text-zinc-500 font-semibold">Calendario</a>
+							<a href="" class="text-zinc-500 font-semibold">Videos</a>
+							<a href="" class="text-zinc-500 font-semibold">Clips</a>
+						</div>
+						<div class="flex flex-row gap-2">
+							<button class="rounded-md bg-zinc-600 py-2 px-2">
+								<svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-heart" width="20" height="20" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ffffff" fill="none" stroke-linecap="round" stroke-linejoin="round">
+									<path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+									<path d="M19.5 12.572l-7.5 7.428l-7.5 -7.428a5 5 0 1 1 7.5 -6.566a5 5 0 1 1 7.5 6.572" />
+								</svg>
+							</button>
+
+							<button class="rounded-md bg-zinc-600 py-2 px-2">
+								<svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-bell" width="20" height="20" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ffffff" fill="none" stroke-linecap="round" stroke-linejoin="round">
+									<path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+									<path d="M10 5a2 2 0 1 1 4 0a7 7 0 0 1 4 6v3a4 4 0 0 0 2 3h-16a4 4 0 0 0 2 -3v-3a7 7 0 0 1 4 -6" />
+									<path d="M9 17v1a3 3 0 0 0 6 0v-1" />
+								  </svg>
+							</button>
+
+							<button class="bg-violet-500 rounded-md flex flex-row gap-1 items-center px-2">
+								<svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-star" width="20" height="20" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ffffff" fill="none" stroke-linecap="round" stroke-linejoin="round">
+									<path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+									<path d="M12 17.75l-6.172 3.245l1.179 -6.873l-5 -4.867l6.9 -1l3.086 -6.253l3.086 6.253l6.9 1l-5 4.867l1.179 6.873z" />
+								</svg>
+								<span class="font-semibold text-sm text-white">Suscribirse</span>
+								<svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-select" width="20" height="20" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ffffff" fill="none" stroke-linecap="round" stroke-linejoin="round">
+									<path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+									<path d="M3 3m0 2a2 2 0 0 1 2 -2h14a2 2 0 0 1 2 2v14a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2z" />
+									<path d="M9 11l3 3l3 -3" />
+								  </svg>
+							</button>
+
+						</div>
+
+					</div>
+					<div class="flex flex-col gap-1">
+						<p class="text-white font-semibold">Charla Dev: Venezuela + Programadores infelices + Resultados encuesta Stack Overflow + salseos ¡Ven y hablamos de programación! | !discord</p>
+						<a href="" class="text-violet-400">Desarrollo de software y juegos</a>
+					</div>
+				</div>
+			</div>
+		</div>
 	</main>
 </Layout>
 
